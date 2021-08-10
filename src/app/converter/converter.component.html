@@ -1,0 +1,26 @@
+<section>
+
+  <div class="top-container">
+    <div>
+      <label>Degrees</label>
+      <input class="input-field" type="text" [(ngModel)]="temperatureCelsius">
+    </div>
+
+    <div>
+      <label>Type</label>
+      <select [(ngModel)]="typeOfTemperature">
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+    </div>
+
+    <input class="btn" type="submit" value="Convert" (click)="makeTheConversion()"/>
+  </div>
+
+  <div class="bottom-container"
+       *ngIf="temperatureResult != null && temperatureCelsius != null && typeOfTemperature !=null">
+    <label>Result</label>
+    <h2>{{temperatureResult.toFixed(2)}} °C</h2>
+  </div>
+
+</section>
